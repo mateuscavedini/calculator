@@ -1,0 +1,199 @@
+/* RESET AND VARIABLES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* COLORS */
+    --color-bg: hsl(120, 2%, 10%);
+    --color-bg-alt: hsla(132, 46%, 22%, 0.25); /*132 46 22*/
+    --color-main: hsl(110, 53%, 62%); /*110 45 43*/
+    --color-main-alt: hsla(110, 45%, 43%, 0.25);
+    --color-main-alt2: hsl(107, 40%, 50%); /*110 40 50 210 100 70 */
+}
+
+/* STRUCTURES */
+body {
+    background-color: var(--color-bg);
+    height: 100vh;
+}
+
+header {
+    flex-grow: 0.25;
+    color: var(--color-main);
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+}
+
+main {
+    background-color: var(--color-bg-alt);
+    flex-grow: 2;
+    width: 60%;
+    border-radius: 10%;
+}
+
+button {
+    font-size: 1.5rem;
+    background-color: white;
+    border: 1px solid gray;
+    position: relative;
+    z-index: 1;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.25;
+    z-index: -1;
+    transition: opacity 150ms ease-in-out;
+}
+
+button:hover::before {
+    opacity: 0;
+}
+
+footer {
+    width: 100%;
+    margin-top: 5.5rem;
+    border-top: 1px solid var(--color-main-alt);
+}
+
+address {
+    padding: 0.25rem 0;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CLASSES AND IDS */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "input input input input" "addition subtraction multiplication division" "n7 n8 n9 equal" "n4 n5 n6 equal" "n1 n2 n3 equal" "n0 dec del equal";
+    gap: 0.5rem;
+}
+
+.operations {
+    background-color: lightgray;
+}
+
+.calculatorFont {
+    font-size: 1.5rem;
+}
+
+.whiteFont {
+    color: white;
+}
+
+.underline {
+    border-bottom: 1px solid transparent;
+    transition: 250ms ease-in;
+}
+
+.underline:hover {
+    border-color: white;
+}
+
+#calculator {
+    height: 60%;
+    width: 30%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 3%;
+}
+
+#input {
+    box-sizing: content-box;
+    font-size: 2rem;
+    grid-area: input;
+    border: 1px solid gray;
+    text-align: right;
+    overflow-x: auto;
+    height: 2.5rem;
+    padding: 0.5rem;
+}
+
+#addition {
+    grid-area: addition;
+}
+
+#subtraction {
+    grid-area: subtraction;
+}
+
+#multiplication {
+    grid-area: multiplication;
+}
+
+#division {
+    grid-area: division;
+}
+
+#equal {
+    grid-area: equal;
+    background-color: var(--color-main-alt2);
+}
+
+#n9 {
+    grid-area: n9;
+}
+
+#n8 {
+    grid-area: n8;
+}
+
+#n7 {
+    grid-area: n7;
+}
+
+#n6 {
+    grid-area: n6;
+}
+
+#n5 {
+    grid-area: n5;
+}
+
+#n4 {
+    grid-area: n4;
+}
+
+#n3 {
+    grid-area: n3;
+}
+
+#n2 {
+    grid-area: n2;
+}
+
+#n1 {
+    grid-area: n1;
+}
+
+#n0 {
+    grid-area: n0;
+}
+
+#dot {
+    grid-area: dec;
+}
+
+#del {
+    grid-area: del;
+}
