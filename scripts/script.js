@@ -67,22 +67,22 @@ function checkSolved(wantedDigit) { // checks if the expression has been solved
 }
 
 // EventListener to all number buttons
-for (let btn of btnsNum) {
+btnsNum.forEach((btn) => {
     btn.addEventListener("click", () => {
         checkSolved(parseInt(btn.textContent))
         input.textContent += btn.textContent
     })
-}
+})
 
 // EventListener to all number keys
-for (let key of keysNum) {
+keysNum.forEach((key) => {
     document.addEventListener("keydown", (e) => {
         if (e.key == key) {
             checkSolved(key)
             input.textContent += key
         }
     })
-}
+})
 
 // EventListener to "." button and key
 btnDec.addEventListener("click", () => {
