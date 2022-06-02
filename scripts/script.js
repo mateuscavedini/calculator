@@ -19,7 +19,7 @@ let hasOperator = false
 let isSolved = false
 
 function handleOperations(wantedOperator) {
-    let lastDigit = input.textContent.charAt(input.textContent.length - 1)
+    let lastDigit = input.textContent[input.textContent.length - 1]
 
     // checks if input is empty. returns if true
     if (lastDigit == "") {
@@ -29,7 +29,7 @@ function handleOperations(wantedOperator) {
     // checks if last digit is already an operator. if true, replaces it for the wanted operator
     for (let op of operators) {
         if (lastDigit == op) {
-            return input.textContent = input.textContent.replace(lastDigit, wantedOperator)
+            return input.textContent = input.textContent.slice(0, -1) + wantedOperator
         }
     }
 
@@ -39,7 +39,7 @@ function handleOperations(wantedOperator) {
 }
 
 function solve() {
-    let lastDigit = input.textContent.charAt(input.textContent.length - 1)
+    let lastDigit = input.textContent[input.textContent.length - 1]
     
     // checks if expression has at least one operator and if the last digit is valid. returns if false
     if (!keysNum.includes(parseInt(lastDigit)) || !hasOperator) {
@@ -115,7 +115,7 @@ document.addEventListener("keydown", (e) => {
 })
 document.addEventListener("keydown", (e) => { // Backspace
     if (e.key == "Backspace") {
-        let erasedDigit = input.textContent.charAt(input.textContent.length - 1)
+        let erasedDigit = input.textContent[input.textContent.length - 1]
         
         if (isSolved) { // resets the expression and all controls if pressed directly after solving
             input.textContent = ""
