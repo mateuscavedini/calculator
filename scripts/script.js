@@ -22,7 +22,7 @@ function handleOperations(wantedOperator) {
     const lastDigit = input.textContent[input.textContent.length - 1]
 
     // checks if input is empty. returns if true
-    if (lastDigit == "") {
+    if (!lastDigit) {
         return
     }
     
