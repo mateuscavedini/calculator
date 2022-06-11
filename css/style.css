@@ -6,10 +6,10 @@
 
     /* COLORS */
     --color-bg: hsl(120, 2%, 10%);
-    --color-bg-alt: hsla(132, 46%, 22%, 0.25); /*132 46 22*/
-    --color-main: hsl(110, 53%, 62%); /*110 45 43*/
+    --color-bg-alt: hsla(132, 46%, 22%, 0.25);
+    --color-main: hsl(110, 53%, 62%);
     --color-main-alt: hsla(110, 45%, 43%, 0.25);
-    --color-main-alt2: hsl(107, 40%, 50%); /*110 40 50 210 100 70 */
+    --color-main-alt2: hsl(107, 40%, 50%);
 }
 
 /* STRUCTURES */
