@@ -19,7 +19,7 @@ let hasOperator = false
 let isSolved = false
 
 function handleOperations(wantedOperator) {
-    let lastDigit = input.textContent[input.textContent.length - 1]
+    const lastDigit = input.textContent[input.textContent.length - 1]
 
     // checks if input is empty. returns if true
     if (lastDigit == "") {
@@ -34,12 +34,13 @@ function handleOperations(wantedOperator) {
     }
 
     hasOperator = true
+    hasDecimal = false
     checkSolved(wantedOperator)
     return input.textContent += wantedOperator
 }
 
 function solve() {
-    let lastDigit = input.textContent[input.textContent.length - 1]
+    const lastDigit = input.textContent[input.textContent.length - 1]
     
     // checks if expression has at least one operator and if the last digit is valid. returns if false
     if (!keysNum.includes(parseInt(lastDigit)) || !hasOperator) {
@@ -48,8 +49,8 @@ function solve() {
     
     hasDecimal = false // resets decimals and operators controls
     hasOperator = false
-    let expression = input.textContent.replace("×", "*").replace("÷", "/")
-    let result = eval(expression)
+    const expression = input.textContent.replace("×", "*").replace("÷", "/")
+    const result = eval(expression)
     input.textContent = result
     isSolved = true
 }
@@ -115,7 +116,7 @@ document.addEventListener("keydown", (e) => {
 })
 document.addEventListener("keydown", (e) => { // Backspace
     if (e.key == "Backspace") {
-        let erasedDigit = input.textContent[input.textContent.length - 1]
+        const erasedDigit = input.textContent[input.textContent.length - 1]
         
         if (isSolved) { // resets the expression and all controls if pressed directly after solving
             input.textContent = ""
@@ -137,48 +138,40 @@ document.addEventListener("keydown", (e) => { // Backspace
 // EventListener to addition button and key
 btnAdd.addEventListener("click", () => {
     handleOperations("+")
-    hasDecimal = false
 })
 document.addEventListener("keydown", (e) => {
     if (e.key == "+") {
         handleOperations("+")
-        hasDecimal = false
     }
 })
 
 // EventListener to subtraction button and key
 btnSub.addEventListener("click", () => {
     handleOperations("-")
-    hasDecimal = false
 })
 document.addEventListener("keydown", (e) => {
     if (e.key == "-") {
         handleOperations("-")
-        hasDecimal = false
     }
 })
 
 // EventListener to multiplication button and key
 btnMult.addEventListener("click", () => {
     handleOperations("×")
-    hasDecimal = false
 })
 document.addEventListener("keydown", (e) => {
     if (e.key == "*") {
         handleOperations("×")
-        hasDecimal = false
     }
 })
 
 // EventListener to division button and key
 btnDiv.addEventListener("click", () => {
     handleOperations("÷")
-    hasDecimal = false
 })
 document.addEventListener("keydown", (e) => {
     if (e.key == "/") {
         handleOperations("÷")
-        hasDecimal = false
     }
 })
 
